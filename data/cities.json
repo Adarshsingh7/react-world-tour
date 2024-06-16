@@ -49,15 +49,15 @@
       }
     },
     {
-      "id": "f328",
-      "cityName": "Yushu Zangzu Zizhizhou",
-      "country": "China",
-      "emoji": "🇨🇳",
-      "date": "2024-06-15T16:21:23.890Z",
-      "notes": "add city",
+      "id": "83da",
+      "cityName": "Pyrzyce",
+      "country": "Poland",
+      "emoji": "🇵🇱",
+      "date": "2024-06-16T01:47:43.680Z",
+      "notes": "",
       "position": {
-        "lat": "35.17380831799959",
-        "lng": "90.6591796875"
+        "lat": "53.16186485103172",
+        "lng": "14.809570312500002"
       }
     }
   ]
