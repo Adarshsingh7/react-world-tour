@@ -12,60 +12,63 @@ import CountryList from './components/CountryList.jsx';
 import City from './components/City.jsx';
 import Form from './components/Form.jsx';
 import { CityProvider } from './context/CitiesContext.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
 
 function App() {
 	return (
-		<CityProvider>
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path='product'
-						element={<Product />}
-					/>
-					<Route
-						path='pricing'
-						element={<Pricing />}
-					/>
-					<Route
-						path='/'
-						element={<Homepage />}
-					/>
-					<Route
-						path='/app'
-						element={<AppLayout />}
-					>
+		<AuthProvider>
+			<CityProvider>
+				<BrowserRouter>
+					<Routes>
 						<Route
-							index
-							element={<CityList />}
+							path='product'
+							element={<Product />}
 						/>
 						<Route
-							path='cities'
-							element={<CityList />}
+							path='pricing'
+							element={<Pricing />}
 						/>
 						<Route
-							path='cities/:id'
-							element={<City />}
+							path='/'
+							element={<Homepage />}
 						/>
 						<Route
-							path='countries'
-							element={<CountryList />}
+							path='/app'
+							element={<AppLayout />}
+						>
+							<Route
+								index
+								element={<CityList />}
+							/>
+							<Route
+								path='cities'
+								element={<CityList />}
+							/>
+							<Route
+								path='cities/:id'
+								element={<City />}
+							/>
+							<Route
+								path='countries'
+								element={<CountryList />}
+							/>
+							<Route
+								path='form'
+								element={<Form />}
+							/>
+						</Route>
+						<Route
+							path='/login'
+							element={<Login />}
 						/>
 						<Route
-							path='form'
-							element={<Form />}
+							path='*'
+							element={<PageNotFound />}
 						/>
-					</Route>
-					<Route
-						path='/login'
-						element={<Login />}
-					/>
-					<Route
-						path='*'
-						element={<PageNotFound />}
-					/>
-				</Routes>
-			</BrowserRouter>
-		</CityProvider>
+					</Routes>
+				</BrowserRouter>
+			</CityProvider>
+		</AuthProvider>
 	);
 }
 
