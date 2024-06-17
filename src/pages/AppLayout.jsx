@@ -7,15 +7,18 @@ import User from '../components/User';
 import { useAuth } from '../context/AuthContext';
 
 import styles from './AppLayout.module.css';
+import ProtectedRoute from './ProtectedRoute';
 
 function AppLayout() {
 	const { isLoggedIn } = useAuth();
 	return (
-		<div className={styles.app}>
-			<Sidebar />
-			<Map />
-			<User />
-		</div>
+		<ProtectedRoute>
+			<div className={styles.app}>
+				<Sidebar />
+				<Map />
+				<User />
+			</div>
+		</ProtectedRoute>
 	);
 }
 

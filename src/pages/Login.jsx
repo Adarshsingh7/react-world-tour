@@ -19,7 +19,7 @@ export default function Login() {
 
 	useEffect(
 		function () {
-			if (isLoggedIn) navigate('/app', { replace: true });
+			if (isLoggedIn) navigate('/app/cities', { replace: true });
 		},
 		[isLoggedIn, navigate]
 	);
